@@ -8,6 +8,9 @@
 
 #import "AppDelegate.h"
 
+#import "LFPAppBaseViewController.h"
+#import "LFPAppEngineManager.h"
+
 @interface AppDelegate ()
 
 @end
@@ -16,7 +19,12 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
+    self.window.rootViewController = [[UINavigationController alloc]initWithRootViewController:[LFPAppEngineManager sharedInstance].baseViewController];
+    
+    [self.window makeKeyAndVisible];
+    
     return YES;
 }
 
