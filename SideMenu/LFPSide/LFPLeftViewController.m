@@ -8,33 +8,77 @@
 
 #import "LFPLeftViewController.h"
 
-@interface LFPLeftViewController ()
+#import "leftViewCell.h"
+
+#import "LFPViewController.h"
+
+#import "LFPAppBaseViewController.h"
+#import "LFPAppEngineManager.h"
+
+@interface LFPLeftViewController ()<UITableViewDataSource,UITableViewDelegate>
+
+@property (nonatomic,strong) NSArray * titleArray;
 
 @end
 
 @implementation LFPLeftViewController
 
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    UIButton *button=[UIButton buttonWithType:UIButtonTypeCustom];
-    button.frame=CGRectMake(100, 100, 100, 100);
-    button.backgroundColor=[UIColor redColor];
-    [self.view addSubview:button];
+    
+    _titleArray=@[@{@"title":@"开通会员",@"image":@"me.png"},@{@"title":@"QQ钱包",@"image":@"me.png"},@{@"title":@"个性装扮",@"image":@"me.png"},@{@"title":@"我的收藏",@"image":@"me.png"},@{@"title":@"我的相册",@"image":@"me.png"},@{@"title":@"我的文件",@"image":@"me.png"},@{@"title":@"我的名片夹",@"image":@"me.png"}];
+    
+    _listTableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 100,self.view.frame.size.width, self.view.frame.size.height-100) style:UITableViewStylePlain];
+    _listTableView.backgroundColor=[UIColor blueColor];
+    _listTableView.dataSource = self;
+    _listTableView.delegate = self;
+    [self.view addSubview:_listTableView];
+    self.view.frame = CGRectMake(-(self.view.frame.size.width - self.view.frame.size.width / 3), 0, self.view.frame.size.width - self.view.frame.size.width / 3, [UIScreen mainScreen].bounds.size.height);
+    
+    
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    
+    return _titleArray.count;
+    
 }
 
-/*
-#pragma mark - Navigation
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    return 35;
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
 }
-*/
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+
+    static NSString *identifier = @"cell";
+    
+    leftViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    if (cell == nil) {
+        cell = [[leftViewCell alloc]initWithStyle:UITableViewCellStyleDefault   reuseIdentifier:identifier];
+    }
+    NSDictionary *dic=_titleArray[indexPath.row];
+    [cell setDic:dic];
+    
+    cell.backgroundColor=[UIColor cyanColor];
+    
+    return cell;
+    
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSDictionary *dic=_titleArray[indexPath.row];
+    LFPAppBaseViewController *baseVC = [LFPAppEngineManager sharedInstance].baseViewController;
+    [baseVC homeControllerAppear];
+    
+    LFPViewController *vc=[[LFPViewController alloc]init];
+    vc.titleName=[dic objectForKey:@"title"];
+    [baseVC.navigationController pushViewController:vc animated:YES];
+
+}
+
 
 @end

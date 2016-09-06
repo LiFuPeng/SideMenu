@@ -14,6 +14,9 @@
 		A64EEC5F1D7E6C2E00C6CF4F /* LFPAppEngineManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A64EEC591D7E6C2E00C6CF4F /* LFPAppEngineManager.m */; };
 		A64EEC601D7E6C2E00C6CF4F /* LFPLeftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A64EEC5B1D7E6C2E00C6CF4F /* LFPLeftViewController.m */; };
 		A64EEC611D7E6C2E00C6CF4F /* LFPTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = A64EEC5D1D7E6C2E00C6CF4F /* LFPTabBarController.m */; };
+		A64EEC641D7E9A8200C6CF4F /* leftViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A64EEC631D7E9A8200C6CF4F /* leftViewCell.m */; };
+		A64EEC681D7EA13900C6CF4F /* ZXPAutoLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = A64EEC671D7EA13900C6CF4F /* ZXPAutoLayout.m */; };
+		A64EEC6E1D7EA43700C6CF4F /* LFPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A64EEC6D1D7EA43700C6CF4F /* LFPViewController.m */; };
 		A67FF7191D7DAE6E00D22598 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A67FF7181D7DAE6E00D22598 /* main.m */; };
 		A67FF71C1D7DAE6E00D22598 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A67FF71B1D7DAE6E00D22598 /* AppDelegate.m */; };
 		A67FF7251D7DAE6E00D22598 /* SideMenu.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A67FF7231D7DAE6E00D22598 /* SideMenu.xcdatamodeld */; };
@@ -55,6 +58,12 @@
 		A64EEC5B1D7E6C2E00C6CF4F /* LFPLeftViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LFPLeftViewController.m; sourceTree = "<group>"; };
 		A64EEC5C1D7E6C2E00C6CF4F /* LFPTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFPTabBarController.h; sourceTree = "<group>"; };
 		A64EEC5D1D7E6C2E00C6CF4F /* LFPTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LFPTabBarController.m; sourceTree = "<group>"; };
+		A64EEC621D7E9A8200C6CF4F /* leftViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = leftViewCell.h; sourceTree = "<group>"; };
+		A64EEC631D7E9A8200C6CF4F /* leftViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = leftViewCell.m; sourceTree = "<group>"; };
+		A64EEC661D7EA13900C6CF4F /* ZXPAutoLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXPAutoLayout.h; sourceTree = "<group>"; };
+		A64EEC671D7EA13900C6CF4F /* ZXPAutoLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXPAutoLayout.m; sourceTree = "<group>"; };
+		A64EEC6C1D7EA43700C6CF4F /* LFPViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFPViewController.h; sourceTree = "<group>"; };
+		A64EEC6D1D7EA43700C6CF4F /* LFPViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LFPViewController.m; sourceTree = "<group>"; };
 		A67FF7141D7DAE6E00D22598 /* SideMenu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SideMenu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A67FF7181D7DAE6E00D22598 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A67FF71A1D7DAE6E00D22598 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -107,8 +116,19 @@
 				A64EEC5B1D7E6C2E00C6CF4F /* LFPLeftViewController.m */,
 				A64EEC5C1D7E6C2E00C6CF4F /* LFPTabBarController.h */,
 				A64EEC5D1D7E6C2E00C6CF4F /* LFPTabBarController.m */,
+				A64EEC621D7E9A8200C6CF4F /* leftViewCell.h */,
+				A64EEC631D7E9A8200C6CF4F /* leftViewCell.m */,
 			);
 			path = LFPSide;
+			sourceTree = "<group>";
+		};
+		A64EEC651D7EA13900C6CF4F /* ZXPAutoLayout */ = {
+			isa = PBXGroup;
+			children = (
+				A64EEC661D7EA13900C6CF4F /* ZXPAutoLayout.h */,
+				A64EEC671D7EA13900C6CF4F /* ZXPAutoLayout.m */,
+			);
+			path = ZXPAutoLayout;
 			sourceTree = "<group>";
 		};
 		A67FF70B1D7DAE6E00D22598 = {
@@ -142,7 +162,10 @@
 				A64EEC4F1D7E6C0500C6CF4F /* LFPDynamicViewController.m */,
 				A64EEC501D7E6C0500C6CF4F /* LFPMessageViewController.h */,
 				A64EEC511D7E6C0500C6CF4F /* LFPMessageViewController.m */,
+				A64EEC6C1D7EA43700C6CF4F /* LFPViewController.h */,
+				A64EEC6D1D7EA43700C6CF4F /* LFPViewController.m */,
 				A64EEC551D7E6C2E00C6CF4F /* LFPSide */,
+				A64EEC651D7EA13900C6CF4F /* ZXPAutoLayout */,
 				A67FF7261D7DAE6E00D22598 /* Assets.xcassets */,
 				A67FF7281D7DAE6E00D22598 /* LaunchScreen.storyboard */,
 				A67FF72B1D7DAE6E00D22598 /* Info.plist */,
@@ -310,13 +333,16 @@
 				A67FF71C1D7DAE6E00D22598 /* AppDelegate.m in Sources */,
 				A64EEC531D7E6C0500C6CF4F /* LFPDynamicViewController.m in Sources */,
 				A67FF7191D7DAE6E00D22598 /* main.m in Sources */,
+				A64EEC641D7E9A8200C6CF4F /* leftViewCell.m in Sources */,
 				A64EEC5E1D7E6C2E00C6CF4F /* LFPAppBaseViewController.m in Sources */,
 				A64EEC601D7E6C2E00C6CF4F /* LFPLeftViewController.m in Sources */,
 				A64EEC5F1D7E6C2E00C6CF4F /* LFPAppEngineManager.m in Sources */,
+				A64EEC6E1D7EA43700C6CF4F /* LFPViewController.m in Sources */,
 				A64EEC611D7E6C2E00C6CF4F /* LFPTabBarController.m in Sources */,
 				A64EEC521D7E6C0500C6CF4F /* LFPContactViewController.m in Sources */,
 				A67FF7251D7DAE6E00D22598 /* SideMenu.xcdatamodeld in Sources */,
 				A64EEC541D7E6C0500C6CF4F /* LFPMessageViewController.m in Sources */,
+				A64EEC681D7EA13900C6CF4F /* ZXPAutoLayout.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
